@@ -57,5 +57,9 @@ if __name__ == '__main__':
 
 In this code, we initialize Pygame, create the game window with the specified dimensions, set the window caption, and create a clock object to control the game's frame rate. The game loop runs as long as the `running` variable is True. It handles quitting the game when the user closes the window.
 
-The game loop also fills the screen with the background color and updates the display. Run the program to check if the game window opens successfully and if you can close it without errors. Let me know if you encounter any issues or if you're ready to move on to the next step!
+The game loop also fills the screen with the background color and updates the display. Run the program to check if the game window opens successfully and if you can close it without errors.
+
+```shell
+python main.py
+```
 
