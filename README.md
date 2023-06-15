@@ -62,4 +62,61 @@ The game loop also fills the screen with the background color and updates the di
 ```shell
 python main.py
 ```
+## Step 3: Create the Snake
+In this step, we'll create the snake and enable it to move around the game window. We'll represent the snake as a list of coordinates, where each coordinate represents a segment of the snake's body.
 
+Add the following code to your program, below the `running = True` line:
+
+```python
+snake = [(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)]  # Snake starts at the center of the screen
+direction = "RIGHT"  # Initial direction
+
+def move_snake():
+    head = snake[0]
+    x, y = head
+
+    if direction == "UP":
+        y -= SNAKE_SIZE
+    elif direction == "DOWN":
+        y += SNAKE_SIZE
+    elif direction == "LEFT":
+        x -= SNAKE_SIZE
+    elif direction == "RIGHT":
+        x += SNAKE_SIZE
+
+    new_head = (x, y)
+    snake.insert(0, new_head)
+    snake.pop()  # Remove the last segment to maintain the size of the snake
+
+def draw_snake(screen):
+    for segment in snake:
+        x, y = segment
+        pygame.draw.rect(screen, SNAKE_COLOR, (x, y, SNAKE_SIZE, SNAKE_SIZE))
+
+```
+
+In this code, we initialize the snake list with a single coordinate representing the snake's head at the center of the screen. The `direction` variable keeps track of the current movement direction of the snake.
+
+The `move_snake` function updates the snake's position based on the current direction. It removes the last segment of the snake to maintain its size and inserts the new head segment at the front of the snake.
+
+The `draw_snake` function is responsible for rendering the snake on the game screen. It iterates over each segment of the snake and draws a rectangle representing each segment using the `pygame.draw.rect` function.
+
+Now, within the game loop, add the following code:
+
+```python
+while running:
+    clock.tick(10)  # Controls the speed of the game, adjust as needed
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill(BACKGROUND_COLOR)
+    move_snake()        # It will update the position
+    draw_snake(screen)  # It will renden the snake on the screen
+    pygame.display.update()
+```
+
+This will call the `move_snake` and `draw_snake` functions within each iteration of the game loop to update and render the snake.
+
+Try running the program now and observe the snake moving on the screen.
