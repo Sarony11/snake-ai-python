@@ -1,0 +1,23 @@
+# Python-specific files
+*.pyc
+*.pyo
+__pycache__/
+
+# Environment-specific files
+env/
+venv/
+.env
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.pyd
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
