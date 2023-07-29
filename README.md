@@ -41,20 +41,3 @@ pip install -r requirements.txt
 wget https://raw.githubusercontent.com/patrickloeber/python-fun/master/snake-pygame/snake_game.py
 wget https://github.com/patrickloeber/python-fun/raw/master/snake-pygame/arial.ttf
 ```
-
-Also, creating the .gitignore from the begining its a great idea :)
-
-Once you have Pygame installed, create a new Python file and import the necessary modules and also define some constants for the game, such as the screen size, the size of the snake and food, and the colors:
-
-```python
-import pygame
-import random
-
-SCREEN_WIDTH = 600
-SCREEN_HEIGHT = 400
-SNAKE_SIZE = 20
-FOOD_SIZE = 20
-SNAKE_COLOR = (0, 255, 0)  # Green
-FOOD_COLOR = (255, 0, 0)  # Red
-BACKGROUND_COLOR = (0, 0, 0)  # Black
-```
